@@ -1,0 +1,50 @@
+After merge make sure that you have all new changes in master .if missed it will be lost
+All contents in master should be in branch.else it thinks like new branch deleted this content from master.(while merging)
+
+while merging there wont be any issue for elements common in master and branch
+
+it will ultimately show truncated result from master(that is shown in branch) and what is now new in master and what is new in branch
+
+//branch
+System.out.println(44);
+		System.out.println(64);
+		System.out.println(84);
+		System.out.println(94);
+		
+		System.out.println(6);
+		System.out.println(8);
+		System.out.println(9);
+		System.out.println(4);
+//master
+System.out.println(47);
+		System.out.println(4);
+		System.out.println(6);
+		System.out.println(8);
+		System.out.println(9);
+
+
+while merging above two
+
+a.<<<<<<< HEAD
+		System.out.println(44);
+		System.out.println(64);
+		System.out.println(84);
+		System.out.println(94);
+		
+b.=======
+		System.out.println(47);
+		System.out.println(4);
+c.>>>>>>> refs/heads/master
+		System.out.println(6);
+		System.out.println(8);
+		System.out.println(9);
+		System.out.println(4);
+
+a-b shows content which are only available in branch
+b-c shows contents which are only available in master.4 is shown since its position varied from master
+below c are contents which are available both.
+For merge always eliminate duplicates from c (compare with section b-c) then add it with section a-b
+after conflicts are resolved commit and push.then put pull request.
+
+
+
